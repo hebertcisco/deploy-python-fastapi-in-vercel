@@ -1,6 +1,15 @@
+import pytest
+
 from index import say_hello, root
 
-def test_root():
-    assert root() == {"message": "Hello World"}
-def test_say_hello():
-    assert say_hello("World") == {"message": "Hello World"}
+
+@pytest.mark.asyncio
+async def test_root():
+    result = await root()
+    assert result == {'message': 'Hello World'}
+
+
+@pytest.mark.asyncio
+async def test_say_hello():
+    result = await say_hello("John")
+    assert result == {'message': 'Hello John'}
