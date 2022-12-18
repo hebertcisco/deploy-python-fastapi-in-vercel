@@ -6,7 +6,7 @@ This example shows how to use FastApi 0.88.0 on Vercel with Serverless Functions
 
 ## Demo
 
-https://deploy-python-fastapi-in-vercel.vercel.app/
+[deploy-python-fastapi-in-vercel.vercel.app/](https://deploy-python-fastapi-in-vercel.vercel.app)
 
 ## How it Works
 
