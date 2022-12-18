@@ -1,0 +1,29 @@
+name: Python testing
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  run_tests_on_ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Bash script file
+        run: |
+          chmod +x ./.github/script/test.sh
+          ./.github/script/test.sh
+        shell: bash
+  run_tests_on_windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run PowerShell script file
+        run: |
+          .\.github/script/test.ps1
+        shell: pwsh
