@@ -64,7 +64,7 @@ or
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 3000
 ```
-Your Flask application is now available at `http://localhost:3000`.
+Your FastApi application is now available at `http://localhost:3000`.
 
 ## One-Click Deploy
 
