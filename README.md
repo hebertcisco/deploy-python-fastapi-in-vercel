@@ -46,6 +46,12 @@ This example shows how to use FastApi 0.88.0 on Vercel with Serverless Functions
 
 This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
 
+## Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Running Locally
 
 ```bash
@@ -53,6 +59,11 @@ npm i -g vercel
 vercel dev
 ```
 
+or 
+
+```bash
+uvicorn main:app --host 0.0.0.0 --port 4000
+```
 Your Flask application is now available at `http://localhost:3000`.
 
 ## One-Click Deploy
