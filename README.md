@@ -62,7 +62,7 @@ vercel dev
 or 
 
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 4000
+uvicorn main:app --host 0.0.0.0 --port 3000
 ```
 Your Flask application is now available at `http://localhost:3000`.
 
