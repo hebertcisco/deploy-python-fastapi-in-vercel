@@ -62,9 +62,9 @@ vercel dev
 or 
 
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 3000
+uvicorn main:app --host 0.0.0.0 --port 8000
 ```
-Your FastApi application is now available at `http://localhost:3000`.
+Your FastApi application is now available at `http://localhost:8000`.
 
 ## One-Click Deploy
 
