@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 
+from api.dtos.ISayHelloDto import ISayHelloDto
+
 app = FastAPI()
 
 @app.get("/")
@@ -12,5 +14,5 @@ async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
 @app.post("/hello")
-async def hello_message(message: str):
-    return {"message": f"Hello {message}"}
+async def hello_message(dto: ISayHelloDto):
+    return {"message": f"Hello {dto.message}"}
