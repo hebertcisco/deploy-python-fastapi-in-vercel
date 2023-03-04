@@ -11,7 +11,7 @@ Accept: application/json
 ###
 
 POST /hello HTTP/1.1
-Host: 3000-hebertcisco-deploypytho-jd9aomhlkk8.ws-us89.gitpod.io
+Host: 127.0.0.1:8000
 Content-Type: application/json
 Content-Length: 28
 
