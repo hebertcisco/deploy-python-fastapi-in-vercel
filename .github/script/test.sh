@@ -18,4 +18,5 @@ if ! [ -x "$(command -v pytest)" ]; then
   echo 'pytest installed.'
 fi
 
+
 pytest
