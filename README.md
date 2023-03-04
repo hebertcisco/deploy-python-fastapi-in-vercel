@@ -46,14 +46,9 @@ This example shows how to use FastApi 0.88.0 on Vercel with Serverless Functions
 
 This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
 
-## Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
 ## Running Locally
 
+### With Docker
 ```bash
 # Build the Docker image
 docker build -t deploy-python-fastapi-in-vercel .
@@ -63,8 +58,13 @@ docker run -p 8000:8000 deploy-python-fastapi-in-vercel
 
 ```
 
-or
+### With uvicorn
 
+#### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
