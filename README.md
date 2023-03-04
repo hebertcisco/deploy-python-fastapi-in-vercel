@@ -37,6 +37,7 @@
 This example shows how to use FastApi 0.88.0 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
 [![Python testing](https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/actions/workflows/python-app.yml)
+[![Docker Image CI](https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/actions/workflows/docker-image.yml/badge.svg)](https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/actions/workflows/docker-image.yml)
 
 ## Demo
 
