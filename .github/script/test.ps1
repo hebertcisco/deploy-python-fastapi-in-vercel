@@ -1,4 +1,5 @@
 #!/bin/pwsh
+
 if (Get-Command pip -ErrorAction SilentlyContinue) {
     Write-Host "Installing Python dependencies..."
     pip install -r requirements.txt
