@@ -55,15 +55,20 @@ pip install -r requirements.txt
 ## Running Locally
 
 ```bash
-npm i -g vercel
-vercel dev
+# Build the Docker image
+docker build -t deploy-python-fastapi-in-vercel .
+
+# Run the Docker container
+docker run -p 8000:8000 deploy-python-fastapi-in-vercel
+
 ```
 
-or 
+or
 
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
+
 Your FastApi application is now available at `http://localhost:8000`.
 
 ## One-Click Deploy
@@ -90,4 +95,3 @@ Or buy me a coffee 🙌🏾
 
 Copyright © 2023 [Hebert F Barros](https://github.com/hebertcisco).<br />
 This project is [MIT](LICENSE) licensed.
-
