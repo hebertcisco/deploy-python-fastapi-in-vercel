@@ -1,0 +1,20 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+###
+
+POST /hello HTTP/1.1
+Host: 127.0.0.1:8000
+Content-Type: application/json
+Content-Length: 28
+
+{
+    "message": "Fulano!"
+}
