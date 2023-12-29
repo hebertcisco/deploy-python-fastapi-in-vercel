@@ -49,7 +49,14 @@ This example uses the Web Server Gateway Interface (WSGI) with FastApi to enable
 
 ## Running Locally
 
+### With Docker Compose
+
+```bash
+docker-compose up
+```
+
 ### With Docker
+
 ```bash
 # Build the Docker image
 docker build -t deploy-python-fastapi-in-vercel .
@@ -66,6 +73,7 @@ docker run -p 8000:8000 deploy-python-fastapi-in-vercel
 ```bash
 pip install -r requirements.txt
 ```
+
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
