@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from DB.DB_Connection import DB_Connection
 
 from src.dtos.ISayHelloDto import ISayHelloDto
-Connection = DB_Connection()
+connection = DB_Connection()
 
 app = FastAPI()
 
