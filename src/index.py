@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from DB_Connection import DB_Connection
+from src.DB_Connection import DB_Connection
 
 from src.dtos.ISayHelloDto import ISayHelloDto
 connection = DB_Connection()
