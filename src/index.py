@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from DB import DB_Connection
 
 from src.dtos.ISayHelloDto import ISayHelloDto
+Connection = DB_Connection()
 
 app = FastAPI()
 
