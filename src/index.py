@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 #from src.DB_Connection import DB_Connection
-
+import logging
 from src.dtos.ISayHelloDto import ISayHelloDto
 #connection = DB_Connection()
 
@@ -24,9 +24,17 @@ app.add_middleware(
 )
 
 
+def createLogger():
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    logger.addHandler(logging.StreamHandler())
+    return logger
+
+
 @app.get("/")
 async def root():
-    print("Sample")
+    log = createLogger()
+    log.info("TEST CASE")
     return {"message": "Hello World"}
 
 
