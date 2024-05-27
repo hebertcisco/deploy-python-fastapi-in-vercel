@@ -25,7 +25,8 @@ app.add_middleware(
 
 
 def createLogger():
-    logger = logging.getLogger(__name__)
+    #Formerly __name__  now uvicorn
+    logger = logging.getLogger("uvicorn")
     logger.setLevel(logging.INFO)
     logger.addHandler(logging.StreamHandler())
     return logger
