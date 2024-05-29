@@ -1,4 +1,4 @@
-import pymongo
+from pymongo import MongoClient
 import os
 client = None
 
