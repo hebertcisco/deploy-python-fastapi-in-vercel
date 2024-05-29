@@ -7,10 +7,10 @@ from src.dtos.ISayHelloDto import ISayHelloDto
 import time
 
 
-                
+conn = None                
 def createDbConnection():
   connection = DB_Connection()
-  return connection
+  conn = connection
                 
 app = FastAPI()
 
@@ -50,8 +50,7 @@ async def hello_message(dto: ISayHelloDto):
   
 @app.get("/ping")
 async def ping():
-    conn = None
-    await conn = createDbConnection()
+    await createDbConnection()
       
     if conn:
       return conn.ping()
