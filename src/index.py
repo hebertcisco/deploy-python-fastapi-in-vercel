@@ -13,7 +13,7 @@ def createDbConnection():
                 
 app = FastAPI()
 
-threading.Thread(target=createDbConnection)
+x = threading.Thread(target=createDbConnection)
 
 origins = [
     "http://localhost.tiangolo.com",
@@ -34,7 +34,8 @@ app.add_middleware(
 
 
 @app.get("/")
-async def root(): 
+async def root():
+    x.run()
     return {"message": "Hello World"}
 
 
