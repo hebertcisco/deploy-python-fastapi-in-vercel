@@ -13,7 +13,7 @@ def get_client():
 
 
 # Send a ping to confirm a successful connection      
-def ping(client):
+def client_ping(client):
         try:
                 client.admin.command('ping')
                 return {"message":"Successful Ping"}
