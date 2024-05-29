@@ -4,6 +4,7 @@ from src.DB_Connection import DB_Connection
 import threading
 import logging
 from src.dtos.ISayHelloDto import ISayHelloDto
+import time
 
 
                 
@@ -52,6 +53,8 @@ async def ping():
     conn = None
     if x.is_alive():
       conn = x.run()
+      time.sleep(4)
+      
     if conn:
       return conn.ping()
     else:
