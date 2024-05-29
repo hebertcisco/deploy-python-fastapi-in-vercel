@@ -11,8 +11,7 @@ import asyncio
 
 conn = None                
 def createDbConnection():
-  connection = DB_Connection()
-  conn = connection
+  conn = get_client()
   return conn
                 
 app = FastAPI()
@@ -53,5 +52,5 @@ async def hello_message(dto: ISayHelloDto):
   
 @app.get("/ping")
 async def ping():
-    conn = DB_Connection()
-    return conn.ping()
+    conn = createDbConnection()
+    return ping(conn)
