@@ -8,7 +8,7 @@ from src.dtos.ISayHelloDto import ISayHelloDto
 import time
 import asyncio
 
-
+#comment
 conn = None                
 def createDbConnection():
   conn = get_client()
