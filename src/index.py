@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.DB_Connection import DB_Connection
+from src.db_connections import DB_Connection
 import threading
 import logging
 from src.dtos.ISayHelloDto import ISayHelloDto
