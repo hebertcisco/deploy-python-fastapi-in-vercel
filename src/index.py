@@ -46,6 +46,7 @@ async def say_hello(name: str):
 @app.post("/hello")
 async def hello_message(dto: ISayHelloDto):
     return {"message": f"Hello {dto.message}"}
+  
 @app.get("/ping")
 async def ping():
     conn = x.run()
