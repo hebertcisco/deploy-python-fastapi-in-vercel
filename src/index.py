@@ -7,9 +7,12 @@ from src.dtos.ISayHelloDto import ISayHelloDto
 
 
                 
-
+def createDbConnection():
+  connection = DbConnection()
+  return connection
                 
 app = FastAPI()
+
 threading.Thread(target=createDbConnection)
 
 origins = [
@@ -28,9 +31,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-def createDbConnection():
-  connection = DbConnection()
-  return connection
+
 
 @app.get("/")
 async def root(): 
