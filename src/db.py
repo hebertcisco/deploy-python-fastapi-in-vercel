@@ -11,7 +11,7 @@ def get_client():
 
 
 
-
+#double comment
 # Send a ping to confirm a successful connection      
 def client_ping(client):
         try:
