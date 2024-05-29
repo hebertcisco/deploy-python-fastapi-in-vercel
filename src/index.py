@@ -49,5 +49,5 @@ async def hello_message(dto: ISayHelloDto):
   
 @app.get("/ping")
 async def ping():
-    conn = x.run()
+    conn = x.start()
     return conn.ping()
