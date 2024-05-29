@@ -51,7 +51,7 @@ async def hello_message(dto: ISayHelloDto):
 @app.get("/ping")
 async def ping():
     conn = None
-    if x.is_alive():
+    if !x.is_alive():
       conn = x.run()
       time.sleep(4)
       
