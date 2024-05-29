@@ -5,10 +5,11 @@ import threading
 import logging
 from src.dtos.ISayHelloDto import ISayHelloDto
 import time
+import asyncio
 
 
 conn = None                
-def createDbConnection():
+def async createDbConnection():
   connection = DB_Connection()
   conn = connection
   return conn
@@ -51,7 +52,7 @@ async def hello_message(dto: ISayHelloDto):
   
 @app.get("/ping")
 async def ping():
-    createDbConnection()
+    await asyncio.run(createDbConnection())
       
     if conn:
       return conn.ping()
