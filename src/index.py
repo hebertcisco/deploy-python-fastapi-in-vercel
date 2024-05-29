@@ -51,7 +51,7 @@ async def hello_message(dto: ISayHelloDto):
 @app.get("/ping")
 async def ping():
     conn = None
-    await conn = createDbConnect()
+    await conn = createDbConnection()
       
     if conn:
       return conn.ping()
