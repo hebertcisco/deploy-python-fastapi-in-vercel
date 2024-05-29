@@ -59,7 +59,7 @@ async def ping():
 async def get_tasks():
     client = get_client()
     tasks_collection = client['sample_mflix.comments']
-    tasks = list(tasks_collection.find({}).limit(25))
+    tasks = list(tasks_collection.find({}).limit(10))
     for task in tasks:
         task["_id"] = str(task["_id"])
     return tasks
