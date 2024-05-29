@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.db import get_client
-from src.db import ping
+from src.db import client_ping
 import threading
 import logging
 from src.dtos.ISayHelloDto import ISayHelloDto
@@ -53,4 +53,4 @@ async def hello_message(dto: ISayHelloDto):
 @app.get("/ping")
 async def ping():
     conn = createDbConnection()
-    return ping(conn)
+    return client_ping(conn)
