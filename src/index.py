@@ -9,7 +9,7 @@ import asyncio
 
 
 conn = None                
-def async createDbConnection():
+def createDbConnection():
   connection = DB_Connection()
   conn = connection
   return conn
@@ -52,9 +52,9 @@ async def hello_message(dto: ISayHelloDto):
   
 @app.get("/ping")
 async def ping():
-    await asyncio.run(createDbConnection())
+    createDbConnection()
       
     if conn:
-      return conn.ping()
+      return conn.ping
     else:
       return {"message":"Object is instance of: "+ str(type(conn))}
