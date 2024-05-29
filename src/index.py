@@ -52,9 +52,4 @@ async def hello_message(dto: ISayHelloDto):
   
 @app.get("/ping")
 async def ping():
-    if conn:
-      return conn.ping()
-      
-    else:
-      createDbConnection()
-      return {"message":"Object is instance of: "+ str(type(conn))}
+    createDbConnection.ping()
