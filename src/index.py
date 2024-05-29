@@ -54,3 +54,12 @@ async def hello_message(dto: ISayHelloDto):
 async def ping():
     conn = createDbConnection()
     return client_ping(conn)
+
+@app.get("/tasks")
+async def get_tasks():
+    client = get_mongo_client()
+    tasks_collection = client.get_collection('sample_mflix.users')
+    tasks = list(tasks_collection.find({}).limit(25))
+    for task in tasks:
+        task["_id"] = str(task["_id"])
+    return tasks
