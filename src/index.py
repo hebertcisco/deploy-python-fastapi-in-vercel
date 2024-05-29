@@ -1,15 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-#from src.DB_Connection import DB_Connection
+from src.DB_Connection import DB_Connection
+import threading
 import logging
 from src.dtos.ISayHelloDto import ISayHelloDto
-from pymongo.mongo_client import MongoClient
 
 
                 
 
                 
-uri = "mongodb://adminSeed:process.env.DB_PASS@ac-ufuhqvj-shard-00-00.5h6sox3.mongodb.net:27017,ac-ufuhqvj-shard-00-01.5h6sox3.mongodb.net:27017,ac-ufuhqvj-shard-00-02.5h6sox3.mongodb.net:27017/?ssl=true&replicaSet=atlas-1vge86-shard-0&authSource=admin&retryWrites=true&w=majority&appName=ProductsTable"
 app = FastAPI()
 
 origins = [
@@ -28,20 +27,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+def createDbConnection():
+  connection = DbConnection()
+  return connection
 
 @app.get("/")
-async def root():   
-    client = MongoClient(uri)
-    try:
-        client.admin.command('ping')
-        print("Pinged your deployment. You successfully connected to MongoDB!")
-        
-    except Exception as e:
-        print(e)  
-                        
-               
-    
+async def root(): 
     return {"message": "Hello World"}
 
 
