@@ -1,4 +1,4 @@
-from pymongo.mongo_client import MongoClient
+import pymongo
 import os
 
 class DB_Connection:
