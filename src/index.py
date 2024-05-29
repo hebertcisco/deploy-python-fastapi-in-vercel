@@ -11,6 +11,7 @@ conn = None
 def createDbConnection():
   connection = DB_Connection()
   conn = connection
+  return conn
                 
 app = FastAPI()
 
