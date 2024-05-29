@@ -8,7 +8,7 @@ from src.dtos.ISayHelloDto import ISayHelloDto
 
                 
 def createDbConnection():
-  connection = DbConnection()
+  connection = Db_Connection()
   return connection
                 
 app = FastAPI()
