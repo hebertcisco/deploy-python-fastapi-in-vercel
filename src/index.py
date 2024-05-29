@@ -10,6 +10,7 @@ from src.dtos.ISayHelloDto import ISayHelloDto
 
                 
 app = FastAPI()
+threading.Thread(target=createDbConnection)
 
 origins = [
     "http://localhost.tiangolo.com",
