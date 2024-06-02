@@ -54,7 +54,7 @@ async def hello_message(dto: ISayHelloDto):
 async def ping():
     conn = createDbConnection()
     return client_ping(conn)
-
+#test
 @app.get("/tasks")
 async def get_tasks():
     client = get_client()
