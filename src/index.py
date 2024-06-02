@@ -1,12 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.db import get_client
-from src.db import client_ping
-import threading
-import logging
+from src.db import get_mongo_client
 from src.dtos.ISayHelloDto import ISayHelloDto
 import time
-import asyncio
+from bson import ObjectId
+from pymongo.operations import SearchIndexModel
 
 #comment
 conn = None                
@@ -16,7 +14,6 @@ def createDbConnection():
                 
 app = FastAPI()
 
-x = threading.Thread(target=createDbConnection)
 
 origins = [
     "http://localhost.tiangolo.com",
@@ -34,7 +31,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def set_search_atlas_index():
 
+    try:
+        client = get_mongo_client()
+        tasks_collection = client.get_collection('tasks')
+        search_index_model = SearchIndexModel(
+            definition={
+                "mappings": {
+                    "dynamic": True
+                },
+            },
+            name="default",
+        )
+        result = tasks_collection.create_search_index(model=search_index_model)
+        print(result)
+    except Exception as e:
+        print(e)
+
+
+set_search_atlas_index()
 
 @app.get("/")
 async def root():
@@ -54,12 +70,13 @@ async def hello_message(dto: ISayHelloDto):
 async def ping():
     conn = createDbConnection()
     return client_ping(conn)
+
 #test
-@app.get("/tasks")
+@app.get("/api/tasks")
 async def get_tasks():
-    client = get_client()
-    tasks_collection = client['sample_mflix']
-    tasks = list(tasks_collection.find({}).limit(10))
+    client = get_mongo_client()
+    tasks_collection = client.get_collection('tasks')
+    tasks = list(tasks_collection.find({}).limit(25))
     for task in tasks:
         task["_id"] = str(task["_id"])
     return tasks
